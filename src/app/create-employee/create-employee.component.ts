@@ -19,7 +19,7 @@ export class CreateEmployeeComponent {
   // }
 
   constructor() {
-    
+
   }
 
   createEmployee() {

@@ -1,7 +1,11 @@
 import { Observable } from "rxjs";
 import { Employee } from "./employee";
 import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
 
+@Injectable({
+    providedIn: 'root'
+})
 export class EmployeeService {
 
     private baseURL = "http://localhost:8080/employees";
