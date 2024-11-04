@@ -1,7 +1,8 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { EmployeeService } from '../employee.service';
 import { Employee } from '../employee';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { error } from 'console';
 
 @Component({
   selector: 'app-create-employee',
@@ -12,18 +13,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class CreateEmployeeComponent {
 
-  employee: Employee = new Employee(0, "", "", "");
+  employee: Employee = new Employee("", "", "");
   
-  // constructor(private employeeService: EmployeeService) {
-  //   console.log(this.employee);
-  // }
-
-  constructor() {
-
+  constructor(private employeeService: EmployeeService) {
+    
   }
 
   createEmployee() {
-    //this.employeeService.createEmployee();
+    this.employeeService.createEmployee(this.employee).subscribe(data => {
+      console.log(data);
+    }, error => console.log(error));
   }
 
   onSubmit() {

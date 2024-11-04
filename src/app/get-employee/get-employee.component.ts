@@ -16,7 +16,6 @@ export class GetEmployeeComponent {
   employees: Employee[];
 
   constructor(private employeeService: EmployeeService) {
-    console.log("all employees");
     this.employees = [];
   }
 
@@ -27,7 +26,6 @@ export class GetEmployeeComponent {
   }
 
   onSubmit() {
-    console.log("Search all employees");
     this.getAllEmployees();
   }
 }
