@@ -1,3 +1,13 @@
-<h1>{{title}}</h1>
-<app-create-employee></app-create-employee>
-<app-get-employee></app-get-employee>
+<h1>{{ title }}</h1>
+<!-- <app-create-employee></app-create-employee> -->
+<!-- <app-get-employee></app-get-employee> -->
+
+<nav>
+    <ul>
+        <li><a routerLink="" routerLinkActive="active">Home</a></li>
+        <li><a routerLink="employees" routerLinkActive="active">Employees List</a></li>
+        <li><a routerLink="create-employee" routerLinkActive="active">Create a Employee</a></li>
+    </ul>
+</nav>
+
+<router-outlet></router-outlet>
