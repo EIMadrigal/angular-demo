@@ -26,11 +26,15 @@ export class EmployeeService {
         return this.httpClient.post(this.baseURL, employee);
     }
 
-    updateEmployee() {
-
+    updateEmployee(id: number, employee: Employee): Observable<Object> {
+        return this.httpClient.put(`${this.baseURL}/${id}`, employee);
     }
 
     deleteEmployee() {
+
+    }
+
+    viewEmployee() {
 
     }
 }
