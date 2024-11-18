@@ -32,7 +32,10 @@ export class GetEmployeeComponent {
   }
 
   deleteEmployee(id: any) {
-
+    this.employeeService.deleteEmployee(id).subscribe(data => {
+      console.log(data);
+      this.getAllEmployees();
+    });
   }
 
   viewEmployee(id: any) {
